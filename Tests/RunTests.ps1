@@ -1,0 +1,1 @@
+﻿dotnet test .\CryptLink.CertBuilderTests.csproj
