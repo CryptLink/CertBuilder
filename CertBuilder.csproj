@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CryptLink.SigningFramework\CryptLink.SigningFramework.csproj" />
+    <ProjectReference Include="..\CryptLink.SigningFramework\SigningFramework.csproj" />
   </ItemGroup>
 
 </Project>

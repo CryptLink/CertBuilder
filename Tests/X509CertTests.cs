@@ -57,12 +57,12 @@ namespace CryptLink.CertBuilderTests {
 
         }
 
-        [Test]
+        [Test, Category("Optional")]
         public void CreateTestSigningCerts() {
-            var ca1 = new CertBuilder { SubjectName = "CN=Test CA1", KeyStrength = 1024 }.BuildX509();
-            var intermediate1 = new CertBuilder { SubjectName = "CN=Intermediate 1", Issuer = ca1, KeyStrength = 1024 }.BuildX509();
-            var intermediate2 = new CertBuilder { SubjectName = "CN=Intermediate 2", Issuer = intermediate1, KeyStrength = 1024 }.BuildX509();
-            var cert1 = new CertBuilder { SubjectName = "CN=Test 1", Issuer = intermediate1, KeyStrength = 1024 }.BuildX509();
+            var ca1 = new CertBuilder { SubjectName = "CN=Test CA1", KeyStrength = 4096 }.BuildX509();
+            var intermediate1 = new CertBuilder { SubjectName = "CN=Intermediate 1", Issuer = ca1, KeyStrength = 4096 }.BuildX509();
+            var intermediate2 = new CertBuilder { SubjectName = "CN=Intermediate 2", Issuer = intermediate1, KeyStrength = 4096 }.BuildX509();
+            var cert1 = new CertBuilder { SubjectName = "CN=Test 1", Issuer = intermediate1, KeyStrength = 4096 }.BuildX509();
 
             Assert.True(ca1.HasPrivateKey);
             Assert.True(Utility.VerifyCert(ca1, true, X509RevocationMode.NoCheck, null), "CA1 is valid (AllowUnknownCertificateAuthority = true)");
@@ -75,10 +75,10 @@ namespace CryptLink.CertBuilderTests {
             Assert.True(Utility.VerifyCert(cert1, false, X509RevocationMode.NoCheck, ca1, intermediate1), "Cert 1 is valid with: CA1.intermediate1");
             Assert.False(Utility.VerifyCert(cert1, false, X509RevocationMode.NoCheck, ca1, intermediate2), "Cert 1 is NOT valid checked against intermediate 2");
 
-            File.WriteAllBytes($"ca1.pfx", ca1.Export(X509ContentType.Pfx, ""));
-            File.WriteAllBytes($"intermediate1.pfx", intermediate1.Export(X509ContentType.Pfx, ""));
-            File.WriteAllBytes($"intermediate2.pfx", intermediate2.Export(X509ContentType.Pfx, ""));
-            File.WriteAllBytes($"cert1.pfx", cert1.Export(X509ContentType.Pfx, ""));
+            File.WriteAllBytes("ca1.pfx", ca1.Export(X509ContentType.Pfx, ""));
+            File.WriteAllBytes("intermediate1.pfx", intermediate1.Export(X509ContentType.Pfx, ""));
+            File.WriteAllBytes("intermediate2.pfx", intermediate2.Export(X509ContentType.Pfx, ""));
+            File.WriteAllBytes("cert1.pfx", cert1.Export(X509ContentType.Pfx, ""));
         }
 
         [Test]
