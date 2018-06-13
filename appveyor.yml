@@ -10,7 +10,7 @@ before_build:
     dotnet restore CertBuilder.csproj --verbosity m;
     dotnet restore Tests/CertBuilderTests.csproj --verbosity m;
 build:
-  project: SigningFramework.csproj
+  project: CertBuilder.csproj
   publish_nuget: true
   verbosity: minimal
 test_script:
