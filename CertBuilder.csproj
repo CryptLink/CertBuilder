@@ -1,18 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>CryptLink.CertBuilder</PackageId>
+    <Authors>Jeremy Peterson</Authors>
+    <Company>CryptLink</Company>
+    <Product>CryptLink.CertBuilder</Product>
+    <Description>A portable (dotnet standard) utility class for generating x509 certificates</Description>
+    <Copyright>CryptLink 2018 - LGPL v3</Copyright>
+    <PackageLicenseUrl>https://github.com/CryptLink/CertBuilder/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/CryptLink/CertBuilder/</PackageProjectUrl>
+    <PackageIconUrl>https://avatars0.githubusercontent.com/u/37396837?s=200&amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/CryptLink/CertBuilder/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>crypto, cryptography, x509, cert, certificate, x509certificate2</PackageTags>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Tests\**" />
     <EmbeddedResource Remove="Tests\**" />
     <None Remove="Tests\**" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="CryptLink.SigningFramework" Version="1.0.4" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.2" />
   </ItemGroup>
-
 </Project>

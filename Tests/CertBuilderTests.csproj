@@ -1,15 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <AssemblyName>CryptLink.CertBuilderTests</AssemblyName>
-
     <RootNamespace>CryptLink.CertBuilderTests</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Appveyor.TestLogger" Version="2.0.0" />
     <PackageReference Include="CryptLink.SigningFramework" Version="1.0.4" />
@@ -17,9 +12,7 @@
     <PackageReference Include="NUnit" Version="3.10.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\CertBuilder.csproj" />
   </ItemGroup>
-
 </Project>
