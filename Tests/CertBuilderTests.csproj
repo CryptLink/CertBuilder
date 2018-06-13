@@ -4,6 +4,7 @@
     <IsPackable>false</IsPackable>
     <AssemblyName>CryptLink.CertBuilderTests</AssemblyName>
     <RootNamespace>CryptLink.CertBuilderTests</RootNamespace>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Appveyor.TestLogger" Version="2.0.0" />
