@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/CryptLink/CertBuilder/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>crypto, cryptography, x509, cert, certificate, x509certificate2</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Tests\**" />
