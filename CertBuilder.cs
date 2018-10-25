@@ -137,7 +137,7 @@ namespace CryptLink {
         private static AsymmetricAlgorithm ConvertToRsaPrivateKey(AsymmetricCipherKeyPair keyPair) {
 
             var keyInfo = PrivateKeyInfoFactory.CreatePrivateKeyInfo(keyPair.Private);
-            var seq = (Asn1Sequence)Asn1Object.FromByteArray(keyInfo.PrivateKey.GetDerEncoded());
+            var seq = (Asn1Sequence)Asn1Object.FromByteArray(keyInfo.PrivateKeyAlgorithm.GetDerEncoded());
             if (seq.Count != 9) {
                 throw new PemException("malformed sequence in RSA private key");
             }

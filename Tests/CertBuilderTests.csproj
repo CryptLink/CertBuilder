@@ -4,13 +4,13 @@
     <IsPackable>false</IsPackable>
     <AssemblyName>CryptLink.CertBuilderTests</AssemblyName>
     <RootNamespace>CryptLink.CertBuilderTests</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Appveyor.TestLogger" Version="2.0.0" />
-    <PackageReference Include="CryptLink.SigningFramework" Version="1.0.4" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2" />
-    <PackageReference Include="NUnit" Version="3.10.0" />
+    <PackageReference Include="CryptLink.SigningFramework" Version="1.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="NUnit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
   </ItemGroup>
   <ItemGroup>
